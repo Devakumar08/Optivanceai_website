@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                     href="mailto:optivance.devaku@gmail.com"
                     className="text-gray-400 hover:underline"
                   >
-                    optivance.devaku@gmail.com
+                    optivance.devakumar@gmail.com
                   </a>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
                     href="tel:+919999999999"
                     className="text-gray-400 hover:underline"
                   >
-                    +91 99999 99999
+                    +91 70108 17168
                   </a>
                 </div>
               </div>
