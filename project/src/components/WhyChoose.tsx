@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
+import founderImg from '../assets/founderimg.jpeg';
 
 const reasons = [
   'Engineered by a VIT Chennai graduate with hands-on experience in leading AI automation platforms',
@@ -64,7 +65,12 @@ const WhyChoose: React.FC = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-dark-700 mr-4 flex items-center justify-center text-xs text-gray-400">
-                    Founder
+                    <img
+  src={founderImg}
+  alt="Devakumar GR, Founder"
+  className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-secondary-500"
+/>
+
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Devakumar GR</h4>
