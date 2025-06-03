@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-medium text-white">Email Us</h4>
                   <a
-                    href="mailto:optivance.devakumar@gmail.com"
+                    href="mailto:info@optivance.ai"
                     className="text-gray-400 hover:underline"
                   >
                     optivance.devakumar@gmail.com
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-medium text-white">Call Us</h4>
                   <a
-                    href="tel:+917010817168"
+                    href="tel:+919876543210"
                     className="text-gray-400 hover:underline"
                   >
                     +91 70108 17168
