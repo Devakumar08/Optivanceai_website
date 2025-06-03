@@ -1,6 +1,8 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import founderImg from 'src/assets/founderimg.jpeg';
+// If your component is in src/components/
+import founderImg from '../assets/founderimg.jpeg';
+
 
 const reasons = [
   'Engineered by a VIT Chennai graduate with hands-on experience in leading AI automation platforms',
