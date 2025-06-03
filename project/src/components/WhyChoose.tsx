@@ -59,16 +59,16 @@ const WhyChoose: React.FC = () => {
               <div className="bg-dark-800 p-8 rounded-xl">
                 <div className="bg-gradient-to-r from-primary-500/10 to-secondary-500/10 p-6 rounded-lg mb-6">
                   <blockquote className="text-lg italic text-gray-300">
-                    "Our AI chatbot has transformed how we engage with customers, providing 24/7 support and boosting conversion rates by 35%."
+                    Empowering your business with AI-driven solutions. Simplify operations, unlock growth, and let’s build the future—together!
                   </blockquote>
                 </div>
                 <div className="flex items-center">
                   <div className="w-12 h-12 rounded-full bg-dark-700 mr-4 flex items-center justify-center text-xs text-gray-400">
-                    Client
+                    Founder
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">John Smith</h4>
-                    <p className="text-sm text-gray-400">CEO, TechSolutions Inc.</p>
+                    <h4 className="font-semibold text-white">Devakumar GR</h4>
+                    <p className="text-sm text-gray-400">Founder & CEO, Optivance.ai</p>
                   </div>
                 </div>
               </div>
