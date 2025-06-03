@@ -9,7 +9,9 @@ const Contact: React.FC = () => {
     message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -26,19 +28,21 @@ const Contact: React.FC = () => {
     <section id="contact" className="section bg-dark-800 section-fade">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="section-title">Get in <span className="text-secondary-500">Touch</span></h2>
+          <h2 className="section-title">
+            Get in <span className="text-secondary-500">Touch</span>
+          </h2>
           <p className="section-subtitle mx-auto">
             Ready to transform your business with AI automation? Let's start the conversation.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 className="text-2xl font-semibold mb-6 text-white">Let's Discuss Your Project</h3>
             <p className="text-gray-300 mb-8">
               Whether you're looking to automate workflows, create a custom chatbot, or develop a voice assistant, we're here to help. Fill out the form, and we'll get back to you within 24 hours.
             </p>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-secondary-500/20 flex items-center justify-center mr-4">
@@ -46,22 +50,32 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Email Us</h4>
-                  <p className="text-gray-400"> optivance.devakumar@gmail.com </p>
+                  <a
+                    href="mailto:optivance.devakumar@gmail.com"
+                    className="text-gray-400 hover:underline"
+                  >
+                    optivance.devakumar@gmail.com
+                  </a>
                 </div>
               </div>
-              
+
               <div className="flex items-start">
                 <div className="w-10 h-10 rounded-full bg-secondary-500/20 flex items-center justify-center mr-4">
                   <Phone className="w-5 h-5 text-secondary-500" />
                 </div>
                 <div>
                   <h4 className="font-medium text-white">Call Us</h4>
-                  <p className="text-gray-400">+91 70108 17168</p>
+                  <a
+                    href="tel:+917010817168"
+                    className="text-gray-400 hover:underline"
+                  >
+                    +91 70108 17168
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <div>
             <form onSubmit={handleSubmit} className="card">
               <div className="mb-4">
@@ -79,7 +93,7 @@ const Contact: React.FC = () => {
                   placeholder="John Smith"
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                   Email Address
@@ -95,7 +109,7 @@ const Contact: React.FC = () => {
                   placeholder="john@example.com"
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-1">
                   Company
@@ -110,7 +124,7 @@ const Contact: React.FC = () => {
                   placeholder="Your Company Ltd."
                 />
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
                   Message
@@ -126,9 +140,10 @@ const Contact: React.FC = () => {
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
-              
+
               <button
                 type="submit"
+                aria-label="Get a Free Consultation"
                 className="w-full btn btn-primary flex items-center justify-center"
               >
                 <Send className="w-4 h-4 mr-2" />
