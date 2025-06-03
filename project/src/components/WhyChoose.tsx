@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle } from 'lucide-react';
-import founderImg from '../assets/founderimg.jpeg';
+import founderImg from 'project/src/assets/founderimg.jpeg';
 
 const reasons = [
   'Engineered by a VIT Chennai graduate with hands-on experience in leading AI automation platforms',
