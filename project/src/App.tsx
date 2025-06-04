@@ -8,6 +8,7 @@ import WhyChoose from './components/WhyChoose';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollAnimation from './utils/scrollAnimation';
+import CalendlyPopup from './components/CalendlyPopup'; // <-- Add this line
 
 function App() {
   // Initialize scroll animations
@@ -28,6 +29,7 @@ function App() {
       <WhyChoose />
       <Contact />
       <Footer />
+      <CalendlyPopup /> {/* <-- Add this line */}
     </div>
   );
 }
