@@ -59,22 +59,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start">
-                <div className="w-10 h-10 rounded-full bg-secondary-500/20 flex items-center justify-center mr-4">
-                  <Phone className="w-5 h-5 text-secondary-500" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Call Us</h4>
-                  <a
-                    href="tel:+919999999999"
-                    className="text-gray-400 hover:underline"
-                  >
-                    +91 70108 17168
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+             
 
           <div>
             <form onSubmit={handleSubmit} className="card">
