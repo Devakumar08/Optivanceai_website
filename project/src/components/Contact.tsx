@@ -9,6 +9,13 @@ const Contact: React.FC = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Replace these with your actual values
+  const AIRTABLE_API_KEY = 'pat32rRvagPTbovUR.66d9b098feb4b9dd5956a81e51bdd243be8579d93ba89b5441a804f23f8b4523';
+  const AIRTABLE_BASE_ID = 'app5kLk3YVn9uGmHw'; // You need to provide this
+  const AIRTABLE_TABLE_NAME = 'Contactsfromwebsite'; // You need to provide this
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -16,12 +23,50 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitToAirtable = async (data: typeof formData) => {
+    try {
+      const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fields: {
+            Name: data.name,
+            email: data.email,
+            company: data.company,
+            message: data.message,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error('Error submitting to Airtable:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formData);
-    alert('Thanks for reaching out! We will contact you soon.');
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      await submitToAirtable(formData);
+      alert('Thanks for reaching out! We will contact you soon.');
+      setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      alert('There was an error submitting the form. Please try again.');
+      console.error('Submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -58,7 +103,6 @@ const Contact: React.FC = () => {
                   </a>
                 </div>
               </div>
-              
             </div>
           </div>
 
@@ -75,7 +119,8 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white disabled:opacity-50"
                   placeholder="John Smith"
                 />
               </div>
@@ -91,7 +136,8 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white disabled:opacity-50"
                   placeholder="john@example.com"
                 />
               </div>
@@ -106,7 +152,8 @@ const Contact: React.FC = () => {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white disabled:opacity-50"
                   placeholder="Your Company Ltd."
                 />
               </div>
@@ -121,19 +168,21 @@ const Contact: React.FC = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                   rows={4}
-                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white resize-none"
+                  className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent text-white resize-none disabled:opacity-50"
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 aria-label="Get a Free Consultation"
-                className="w-full btn btn-primary flex items-center justify-center"
+                className="w-full btn btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Get a Free Consultation
+                {isSubmitting ? 'Submitting...' : 'Get a Free Consultation'}
               </button>
             </form>
           </div>
