@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
   // Replace these with your actual values
   const AIRTABLE_API_KEY = 'pat32rRvagPTbovUR.66d9b098feb4b9dd5956a81e51bdd243be8579d93ba89b5441a804f23f8b4523';
   const AIRTABLE_BASE_ID = 'app5kLk3YVn9uGmHw'; // You need to provide this
-  const AIRTABLE_TABLE_NAME = 'Contactsfromwebsite'; // You need to provide this
+  const AIRTABLE_TABLE_NAME = 'Table 1'; // You need to provide this
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
