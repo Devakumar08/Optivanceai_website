@@ -12,22 +12,24 @@ const projects = [
     demoLink: '#',
   },
   {
-    title: 'AI Interview Voice Bot',
-    description: 'Mock interview bot that evaluates candidates and books real tutoring appointments to boost interview skills.',
+    title: 'Voice AI Bot',
+    description: 'A quirky, conversational AI assistant that responds to your voice and text with humor and personality. Try the live demo!',
     icon: <Mic size={24} />,
     iconBg: 'bg-secondary-500/20',
     iconColor: 'text-secondary-400',
-    techStack: ['Vapi', 'Bland.ai', 'Calendar API'],
-    demoLink: '#',
+    techStack: ['React', 'OpenAI', 'Web Speech API'],
+    demoLink: 'https://theuselessfunnyassistant.netlify.app/',
   },
 ];
 
-const Projects: React.FC = () => {
+const Projects = () => {
   return (
-    <section id="projects\" className="section bg-dark-800 section-fade">
+    <section id="projects" className="section bg-dark-800 section-fade">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="section-title">Project <span className="text-secondary-500">Highlights</span></h2>
+          <h2 className="section-title">
+            Project <span className="text-secondary-500">Highlights</span>
+          </h2>
           <p className="section-subtitle mx-auto">
             Explore our recent AI automation projects that deliver real business results.
           </p>
@@ -64,6 +66,8 @@ const Projects: React.FC = () => {
                 <a 
                   href={project.demoLink}
                   className="inline-flex items-center text-secondary-500 hover:text-secondary-400 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="mr-2">View Project Details</span>
                   <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
