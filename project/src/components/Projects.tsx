@@ -63,15 +63,22 @@ const Projects = () => {
               </div>
               
               <div className="mt-4 border-t border-dark-700 pt-4">
-                <a 
-                  href={project.demoLink}
-                  className="inline-flex items-center text-secondary-500 hover:text-secondary-400 transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="mr-2">View Project Details</span>
-                  <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-                </a>
+                {project.demoLink && project.demoLink !== '#' ? (
+                  <a 
+                    href={project.demoLink}
+                    className="inline-flex items-center text-secondary-500 hover:text-secondary-400 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="mr-2">View Project Details</span>
+                    <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center text-gray-500 cursor-not-allowed">
+                    <span className="mr-2">View Project Details</span>
+                    <ArrowRight size={16} />
+                  </span>
+                )}
               </div>
               
               <div className="mt-6 bg-dark-700 h-48 rounded-lg overflow-hidden">
