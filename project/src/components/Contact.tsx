@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
                     cursor: "pointer"
                   }}
                 >
-                  Schedule time with me
+                  Schedule a meeting with me
                 </a>
               </div>
             </div>
