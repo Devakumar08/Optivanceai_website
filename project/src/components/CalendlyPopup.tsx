@@ -54,7 +54,7 @@ const CalendlyButton: React.FC = () => {
         zIndex: 1000,
       }}
     >
-      Schedule time with me
+      Schedule a Meeting 
     </button>
   );
 };
