@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send } from 'lucide-react';
+import { Mail, Send } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -102,6 +102,26 @@ const Contact: React.FC = () => {
                     optivance.devakumar@gmail.com
                   </a>
                 </div>
+              </div>
+              {/* Calendly Button */}
+              <div className="mt-4">
+                <a
+                  href="https://calendly.com/optivance-devakumar?hide_gdpr_banner=1&hide_event_type_details=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 rounded-full font-bold shadow-lg transition-colors"
+                  style={{
+                    background: "#00E0FF",
+                    color: "#181F2A",
+                    border: "none",
+                    fontSize: "1rem",
+                    fontWeight: 700,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
+                    cursor: "pointer"
+                  }}
+                >
+                  Schedule time with me
+                </a>
               </div>
             </div>
           </div>
