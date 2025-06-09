@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollAnimation from './utils/scrollAnimation';
 import CalendlyPopup from './components/CalendlyPopup';
-import VoiceflowChatbot from "./components/VoiceflowChatbot";
+import VoiceflowChatbot from './components/VoiceflowChatbot';
 
 function App() {
   // Initialize scroll animations
@@ -31,6 +31,16 @@ function App() {
       <Contact />
       <Footer />
       <CalendlyPopup />
+      {/* Custom container for Voiceflow chatbot on the left */}
+      <div
+        id="voiceflow-chat-container"
+        style={{
+          position: "fixed",
+          bottom: "32px",
+          left: "32px",
+          zIndex: 9999,
+        }}
+      />
       <VoiceflowChatbot />
     </div>
   );
