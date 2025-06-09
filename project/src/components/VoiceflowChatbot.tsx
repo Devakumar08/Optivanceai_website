@@ -16,11 +16,11 @@ const VoiceflowChatbot: React.FC = () => {
             url: 'https://general-runtime.voiceflow.com',
             versionID: 'production',
             voice: { url: "https://runtime-api.voiceflow.com" },
-            render: { mode: "overlay", align: "left" } // <-- Place widget on the left
+            render: { mode: "embedded", target: "#voiceflow-chat-container" }
           });
         }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
-        v.type = "text/javascript"; 
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
       })(document, 'script');
     `;
