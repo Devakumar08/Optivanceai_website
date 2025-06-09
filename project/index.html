@@ -24,6 +24,24 @@
     <meta name="twitter:description" content="Optivance.ai - AI automation agency specializing in chatbots, voice assistants, and workflow automation for ambitious businesses." />
     <meta name="twitter:image" content="https://optivanceai.netlify.app/coveroptivance.png" />
     <meta name="twitter:site" content="@optivance" />
+
+    <!-- Custom CSS to move Calendly popup to the left -->
+    <style>
+      .calendly-badge-widget {
+        right: auto !important;
+        left: 32px !important;
+        bottom: 32px !important;
+      }
+      
+      /* Optional: Ensure Calendly button matches your brand style */
+      .calendly-badge-widget .calendly-badge-content {
+        background-color: #00E0FF !important;
+        color: #181F2A !important;
+        border-radius: 25px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12) !important;
+      }
+    </style>
   </head>
   <body class="font-sans text-gray-800 bg-gray-50">
     <div id="root"></div>
