@@ -30,7 +30,7 @@ function App() {
       <Contact />
       <Footer />
       <CalendlyPopup />
-      <VoiceflowChatbot />
+     
     </div>
   );
 }
