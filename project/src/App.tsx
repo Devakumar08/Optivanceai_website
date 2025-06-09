@@ -9,7 +9,6 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollAnimation from './utils/scrollAnimation';
 import CalendlyPopup from './components/CalendlyPopup';
-import VoiceflowChatbot from "./components/VoiceflowChatbot";
 
 function App() {
   // Initialize scroll animations
