@@ -20,13 +20,15 @@ const VoiceflowChatbot: React.FC = () => {
               url: "https://runtime-api.voiceflow.com"
             }
           });
-        }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        };
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
       })(document, 'script');
     `;
     document.body.appendChild(script);
 
-    // Optional: Cleanup if component unmounts
+    // Cleanup if component unmounts
     return () => {
       script.remove();
     };
