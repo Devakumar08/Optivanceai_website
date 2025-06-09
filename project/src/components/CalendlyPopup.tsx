@@ -50,11 +50,11 @@ const CalendlyButton: React.FC = () => {
         cursor: "pointer",
         position: "fixed",
         bottom: "32px",
-        right: "32px",
+        left: "32px", // Changed from right: "32px" to left: "32px"
         zIndex: 1000,
       }}
     >
-      Schedule a Meeting 
+      Schedule a Meeting
     </button>
   );
 };
