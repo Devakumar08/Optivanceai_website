@@ -8,7 +8,7 @@ import WhyChoose from './components/WhyChoose';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useScrollAnimation from './utils/scrollAnimation';
-import CalendlyPopup from './components/CalendlyPopup';
+
 import VoiceflowChatbot from "./components/VoiceflowChatbot";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
       <WhyChoose />
       <Contact />
       <Footer />
-      <CalendlyPopup />
+     
       <VoiceflowChatbot />
     </div>
   );
