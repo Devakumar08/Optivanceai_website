@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 const VoiceflowChatbot: React.FC = () => {
   useEffect(() => {
-    // Prevent adding the script multiple times
     if (document.getElementById("voiceflow-chatbot-script")) return;
 
     const script = document.createElement("script");
@@ -16,23 +15,23 @@ const VoiceflowChatbot: React.FC = () => {
             verify: { projectID: '6846a356947eed9a2b1671d8' },
             url: 'https://general-runtime.voiceflow.com',
             versionID: 'production',
-            voice: {
-              url: "https://runtime-api.voiceflow.com"
-            }
+            voice: { url: "https://runtime-api.voiceflow.com" },
+            render: { mode: "overlay", align: "left" } // <-- Place widget on the left
           });
         }
-        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
       })(document, 'script');
     `;
     document.body.appendChild(script);
 
-    // Optional: Cleanup if component unmounts
     return () => {
       script.remove();
     };
   }, []);
 
-  return null; // This component does not render anything visible
+  return null;
 };
 
 export default VoiceflowChatbot;
